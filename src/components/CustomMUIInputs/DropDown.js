@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MenuItem, Select, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { ReactComponent as ArrowIcon } from '../../assests/icons/arrow_down.svg';
+// import { ReactComponent as ArrowIcon } from '../../assests/icons/arrow_down.svg';
 
 const DropDown = ({
   label,

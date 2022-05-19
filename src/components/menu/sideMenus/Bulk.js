@@ -2,9 +2,7 @@ import { Box } from '@material-ui/core';
 import useStyles from '../../../styles/sideMenus/Snipe.css';
 import DropDown from '../../CustomMUIInputs/DropDown';
 import Input from '../../CustomMUIInputs/Input';
-import MultiSelect from '../../CustomMUIInputs/MultiSelect';
 import Toggle from '../../CustomMUIInputs/Toggle';
-import Result from '../../CustomMUIInputs/Result';
 import CustomButton from '../../CustomButton/index';
 
 const items = ['val1', 'val2', 'val3', 'val4'];
