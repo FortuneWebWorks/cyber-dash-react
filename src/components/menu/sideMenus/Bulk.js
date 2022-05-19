@@ -14,15 +14,19 @@ const Bulk = () => {
 
   return (
     <Box className={classes.formControl}>
-      <Input label="Snipe Below *" width={'100%'} placeHolder="10" />
+      <Input
+        label="Contract Address *"
+        width={'100%'}
+        placeHolder="asdfsdfaadfsadfsasdf"
+      />
 
-      <Input label="Snipe Below *" width={'100%'} placeHolder="10" />
+      <Input label="Token" width={'100%'} placeHolder="10" />
 
       <Box className={classes.twoElementContainer}>
-        <Input label="Collection" width={'33%'} placeHolder="Boardssdfsgclub" />
-        <Input label="CSlug *" width={'33%'} placeHolder="Boardssdub" />
+        <Input label="Price *" width={'33%'} placeHolder="200" />
+        <Input label="Expiry Time *" width={'33%'} placeHolder="5" />
         <DropDown
-          label="Trait"
+          label="Type *"
           placeHolder="(1) Selectd"
           width={'33%'}
           options={items}
@@ -32,16 +36,23 @@ const Bulk = () => {
       <Box className={classes.twoElementContainer}>
         <Toggle
           width="33%"
-          label="Timer Enable?"
+          label="Overbid?"
           defaultState={true}
           labelPosition="column"
+          fontSize=".5rem"
         />
-        <Input label="CSlug *" width={'33%'} placeHolder="Boardssdub" />
+        <Input
+          label="Overbid Increase"
+          width={'33%'}
+          placeHolder="5"
+          fontSize=".5rem"
+        />
         <DropDown
-          label="Trait"
+          label="Overbid Max Price"
           placeHolder="(1) Selectd"
           width={'33%'}
           options={items}
+          fontSize=".5rem"
         />
       </Box>
 
@@ -52,9 +63,13 @@ const Bulk = () => {
         options={items}
       />
 
-      <Input label="Snipe Below *" width={'100%'} placeHolder="10" />
+      <Input
+        label="RPC URL *"
+        width={'100%'}
+        placeHolder="https://Google.com"
+      />
 
-      <CustomButton title="Load Traits" className={classes.btn} />
+      <CustomButton title="Create Task" className={classes.btn} />
     </Box>
   );
 };

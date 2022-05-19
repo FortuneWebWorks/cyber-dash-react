@@ -3,7 +3,14 @@ import { MenuItem, Select, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { ReactComponent as ArrowIcon } from '../../assests/icons/arrow_down.svg';
 
-const DropDown = ({ label, width, placeHolder, options, fontSize }) => {
+const DropDown = ({
+  label,
+  width,
+  placeHolder,
+  options,
+  fontSize,
+  callBack,
+}) => {
   const useStyles = makeStyles((theme) => ({
     select: {
       height: '2rem',
@@ -26,6 +33,8 @@ const DropDown = ({ label, width, placeHolder, options, fontSize }) => {
 
   const onChangeHedler = (e) => {
     setSelectValue(e.target.value);
+
+    callBack && callBack(e.target.value);
   };
 
   return (

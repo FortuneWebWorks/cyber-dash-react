@@ -57,7 +57,7 @@ const IOSSwitch = withStyles((theme) => ({
   );
 });
 
-const Toggle = ({ width, label, defaultState, labelPosition }) => {
+const Toggle = ({ width, label, defaultState, labelPosition, fontSize }) => {
   const useStyles = makeStyles((theme) => ({
     container: {
       width: '100%',
@@ -65,8 +65,14 @@ const Toggle = ({ width, label, defaultState, labelPosition }) => {
       flexDirection: labelPosition === 'left' ? 'row-reverse' : 'row',
       justifyContent: 'space-between',
       margin: 0,
+      gap: '0.3rem',
       marginTop: '.5rem',
       color: '#fff',
+
+      [`& .MuiFormControlLabel-label `]: {
+        fontSize: fontSize,
+        fontWeight: 'bold',
+      },
     },
 
     column: {
@@ -75,6 +81,7 @@ const Toggle = ({ width, label, defaultState, labelPosition }) => {
       flexDirection: 'column-reverse',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
+      fontSize: '.5rem',
     },
   }));
   const classes = useStyles();

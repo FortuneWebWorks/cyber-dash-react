@@ -40,14 +40,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MultiSelect = ({ label, width, placeHolder, options }) => {
+const MultiSelect = ({ label, width, options, callBack }) => {
   const classes = useStyles();
 
   // Toggle buttons active
   const [alignment, setAlignment] = useState('Custom');
 
-  const handleToggle = (event, newAlignment) => {
+  const handleToggle = (e, newAlignment) => {
     setAlignment(newAlignment);
+    callBack && callBack(newAlignment);
   };
 
   return (
@@ -65,23 +66,17 @@ const MultiSelect = ({ label, width, placeHolder, options }) => {
         orientation="horizontal"
         style={{ width: width }}
       >
-        <ToggleButton
-          className={classes.ActiveBtn}
-          value="Fast(90)"
-          size="small"
-        >
-          Fast(90)
-        </ToggleButton>
-        <ToggleButton
-          className={classes.ActiveBtn}
-          value="Multiplier"
-          size="small"
-        >
-          Miliersdf
-        </ToggleButton>
-        <ToggleButton className={classes.ActiveBtn} value="Custom" size="small">
-          Custom
-        </ToggleButton>
+        {options &&
+          options.map((option) => (
+            <ToggleButton
+              key={option}
+              className={classes.ActiveBtn}
+              value={option}
+              size="small"
+            >
+              {option}
+            </ToggleButton>
+          ))}
       </ToggleButtonGroup>
     </Box>
   );
